@@ -1,0 +1,63 @@
+<template>
+    <!-- <lightning-card title="Top 5 Run Scorer List"> -->
+    <div style="background-color: lightblue; border: 3px solid black;">
+        <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+        >Top 10 Run Scorers</h1>
+        <div class="slds-var-p-around_medium">
+            <template if:true={getTopBatsmanLists.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bold;">Player Name</th>
+                            <th style="font-weight: bold;">Team Name</th>
+                            <th style="font-weight: bold;">Run Scores</th>
+                            <th style="font-weight: bold;">Ball Faced</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={getTopBatsmanLists.data} for:item="item">      
+                            <tr key={item.Id}>
+                                <td style="font-weight: bold;">{item.Name}</td>
+                                <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                <td style="font-weight: bold;">{item.Total_Runs_Scored__c}</td>
+                                <td style="font-weight: bold;">{item.Total_Ball_Faced__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </div>    
+    <!-- </lightning-card> -->
+    </br>
+    <!-- <lightning-card title="Top 5 Wicket Taker List"> -->
+    <div style="background-color: lightblue; border: 3px solid black;">
+        <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+        >Top 10 Wicket Taker</h1>       
+        <div class="slds-var-p-around_medium">
+            <template if:true={getTopBallerLists.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bold;">Player Name</th>
+                            <th style="font-weight: bold;">Team Name</th>
+                            <th style="font-weight: bold;">Wickets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={getTopBallerLists.data} for:item="item">      
+                            <tr key={item.Id}>
+                                <td style="font-weight: bold;">{item.Name}</td>
+                                <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                <td style="font-weight: bold;">{item.Total_Wickets__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </div>    
+    <!-- </lightning-card> -->
+</template>

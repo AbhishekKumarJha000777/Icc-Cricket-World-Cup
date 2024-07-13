@@ -1,0 +1,112 @@
+<template>
+    <!-- <lightning-card title="Get Match Scorecard"> -->
+        <div class="slds-var-p-around_medium" style="background-color: lightblue;
+        border: 3px solid black;">
+        </br>
+        <template if:true={gameResultLists.data}>
+                <template for:each={gameResultLists.data} for:item="item">   
+                    <div key={item.Id}>
+                        <h1 style="text-align: center;
+                                    font-size: x-large;
+                                    font-weight: bolder;
+                                    text-decoration: underline;">Scorecard of {item.Between_Teams__c} ({item.Match_Number__c})</h1>
+                    </div>
+                </template>
+        </template>
+    </br>
+            <template if:true={gameResultLists.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bolder;">Toss Result</th>
+                            <th style="font-weight: bolder;">Played At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={gameResultLists.data} for:item="item">   
+                            <tr key={item.Id}>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Toss_Information__c} {item.Toss_Decision__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Venue__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </br>
+            <template if:true={gameResultLists.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bolder;">Team Name</th>
+                            <th style="font-weight: bolder;">Run Scored</th>
+                            <th style="font-weight: bolder;">Wicket</th>
+                            <th style="font-weight: bolder;">Overs</th>
+                            <th style="font-weight: bolder;">Run Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={gameResultLists.data} for:item="item">   
+                            <tr key={item.Id}>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Team_Name_1__r.Name}</td>
+                                <td style="font-weight: bolder; font-size: larger; color: brown;">{item.Total_Run_Scored__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.For_Wicket__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Overs__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Run_Rate__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </br>
+            <template if:true={gameResultLists.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bolder;">Team Name</th>
+                            <th style="font-weight: bolder;">Run Scored</th>
+                            <th style="font-weight: bolder;">Wicket</th>
+                            <th style="font-weight: bolder;">Overs</th>
+                            <th style="font-weight: bolder;">Run Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={gameResultLists.data} for:item="item">   
+                            <tr key={item.Id}>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Team_Name_2__r.Name}</td>
+                                <td style="font-weight: bolder; font-size: large; color: brown;">{item.Run_Scored__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Wicket__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Overs_Played__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.at_Run_Rate__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </br>
+            <template if:true={gameResultLists.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bolder;">Match Result</th>
+                            <!-- <th style="font-weight: bold;">Player Of the Match</th> -->
+                            <th style="font-weight: bolder;">Player Of the Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={gameResultLists.data} for:item="item">   
+                            <tr key={item.Id}>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(109, 13, 13);">{item.Result__c}</td>
+                                <!-- <td style="font-weight: bold;">{item.Player_Of_the_Match__c}</td> --> 
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Player_Of_the_Match__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    <!-- </lightning-card> -->
+</template>

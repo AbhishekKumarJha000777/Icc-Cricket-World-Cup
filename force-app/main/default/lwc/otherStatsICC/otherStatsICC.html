@@ -1,0 +1,121 @@
+<template>
+    <!-- <lightning-card title="Most Wide Ball Bowls"> -->
+    <div style="background-color: lightblue; border: 3px solid black;">
+    <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+    >Most Wide Ball Bowls</h1>    
+            <div class="slds-var-p-around_medium">
+                <template if:true={getMostWideBalls.data}>
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                    style="background-color: lightblue;">
+                       <thead>
+                            <tr>
+                                <th style="font-weight: bold; color: brown; font-size: medium;">Player Name</th>
+                                <th style="font-weight: bold;">Team</th>
+                                <th style="font-weight: bold; color: blue; font-size: medium;">Wide Ball Bowls</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={getMostWideBalls.data} for:item="item">      
+                                <tr key={item.Id}>
+                                    <td style="font-weight: bold; color: brown; font-size: medium;">{item.Name}</td>
+                                    <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                    <td style="font-weight: bold; color: blue; font-size: medium;">{item.Total_Wide_Ball_Bowled__c}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+            </div>
+        </div>    
+        <!-- </lightning-card> -->
+    </br>
+        <!-- <lightning-card title="Most No Ball Bowls"> -->
+        <div style="background-color: lightblue; border: 3px solid black;">
+        <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+        >Most No Ball Bowls</h1>
+            <div class="slds-var-p-around_medium">
+                <template if:true={getMostNoBalls.data}>
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                    style="background-color: lightblue;">
+                       <thead>
+                            <tr>
+                                <th style="font-weight: bold; color: brown; font-size: medium;">Player Name</th>
+                                <th style="font-weight: bold;">Team</th>
+                                <th style="font-weight: bold; color: blue; font-size: medium;">No Ball Bowls</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={getMostNoBalls.data} for:item="item">      
+                                <tr key={item.Id}>
+                                    <td style="font-weight: bold; color: brown; font-size: medium;">{item.Name}</td>
+                                    <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                    <td style="font-weight: bold; color: blue; font-size: medium;">{item.Total_No_Ball_Bowled__c}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+            </div>
+        </div>
+        <!-- </lightning-card> -->
+    </br>
+        <!-- <lightning-card title="Most Maiden by a Bowler"> -->
+        <div style="background-color: lightblue; border: 3px solid black;">
+        <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+        >Most Maiden by a Bowler</h1>
+            <div class="slds-var-p-around_medium">
+                <template if:true={getMostMaidens.data}>
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                    style="background-color: lightblue;">
+                       <thead>
+                            <tr>
+                                <th style="font-weight: bold; color: brown; font-size: medium;">Player Name</th>
+                                <th style="font-weight: bold;">Team</th>
+                                <th style="font-weight: bold; color: blue; font-size: medium;">Maiden</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={getMostMaidens.data} for:item="item">      
+                                <tr key={item.Id}>
+                                    <td style="font-weight: bold; color: brown; font-size: medium;">{item.Name}</td>
+                                    <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                    <td style="font-weight: bold; color: blue; font-size: medium;">{item.Total_Maiden_Bowled__c}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+            </div>
+        </div>     
+        <!-- </lightning-card> -->
+    </br>
+    <!-- <lightning-card title="Most Runs Given a Bowler"> -->
+    <div style="background-color: lightblue; border: 3px solid black;">
+    <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+    >Most Runs Given by a Bowler</h1>
+        <div class="slds-var-p-around_medium">
+            <template if:true={getMostRuns.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                   <thead>
+                        <tr>
+                            <th style="font-weight: bold; color: brown; font-size: medium;">Player Name</th>
+                            <th style="font-weight: bold;">Team</th>
+                            <th style="font-weight: bold; color: blue; font-size: medium;">Runs Given</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={getMostRuns.data} for:item="item">      
+                            <tr key={item.Id}>
+                                <td style="font-weight: bold; color: brown; font-size: medium;">{item.Name}</td>
+                                <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                <td style="font-weight: bold; color: blue; font-size: medium;">{item.Total_Run_Given__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </div>     
+    <!-- </lightning-card> -->
+</template>

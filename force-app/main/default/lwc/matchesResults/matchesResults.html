@@ -1,0 +1,35 @@
+<template>
+<div style="background-color: lightblue; border: 3px solid black;">
+    <!-- <lightning-card title="All Game Results"> -->
+        <h1 style="text-align: center;  color: brown; font-size: large; font-weight: bold;
+        margin-top: 5px; margin-bottom: 5px;">All Matches Results</h1>
+        <div class="slds-p-around_medium cont">
+            <template if:true={gameListResults.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer container">
+                    <thead>
+                        <tr class="container">
+                            <th style="font-weight: bold;">Match Number</th>
+                            <th style="font-weight: bold;">Played Between</th>
+                            <th style="font-weight: bold;">Match Result</th>
+                            <th style="font-weight: bold;">Get Scorecard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={gameListResults.data} for:item="item">      
+                            <tr key={item.Id}>
+                                <td style="font-weight: bold; color: brown;">{item.Match_Number__c}</td>
+                                <td style="font-weight: bold;">{item.Between_Teams__c}</td>
+                                <td style="font-weight: bolder; font-size: large; color: rgb(4, 4, 117);">{item.Result__c}</td>
+                                <td><lightning-button data-id={item.Id} label="Sorecard"
+                                    onclick={handleClick}
+                                    style="font-weight: bold;">
+                                </lightning-button></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    <!-- </lightning-card> -->
+</div>
+</template>

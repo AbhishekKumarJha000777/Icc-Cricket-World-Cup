@@ -1,0 +1,61 @@
+<template>
+    <!-- <lightning-card title="Top Four Hitter"> -->
+    <div style="background-color: lightblue; border: 3px solid black;">
+    <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+    >Top 5 Fours Hitter</h1>
+        <div class="slds-var-p-around_medium">
+            <template if:true={getTopFoursHitter.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bold; color: brown; font-size: medium;">Player Name</th>
+                            <th style="font-weight: bold;">Team Name</th>
+                            <th style="font-weight: bold; color: blue; font-size: medium;">Total Fours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={getTopFoursHitter.data} for:item="item">      
+                            <tr key={item.Id}>
+                                <td style="font-weight: bold; color: brown; font-size: medium;">{item.Name}</td>
+                                <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                <td style="font-weight: bold; color: blue; font-size: medium;">{item.Total_Fours__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </div>
+    <!-- </lightning-card> -->
+    </br>
+    <!-- <lightning-card title="Top Six Hitter"> -->
+    <div style="background-color: lightblue; border: 3px solid black;">
+    <h1 style="text-align: center; color: brown; font-size: large; font-weight: bold; margin-top: 5px;"
+    >Top 5 Six Hitter</h1>
+        <div class="slds-var-p-around_medium">
+            <template if:true={getTopSixesHitter.data}>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+                style="background-color: lightblue;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bold; color: brown; font-size: medium;">Player Name</th>
+                            <th style="font-weight: bold;">Team Name</th>
+                            <th style="font-weight: bold; color: blue; font-size: medium;">Total Sixes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={getTopSixesHitter.data} for:item="item">      
+                            <tr key={item.Id}>
+                                <td style="font-weight: bold; color: brown; font-size: medium;">{item.Name}</td>
+                                <td style="font-weight: bold;">{item.Team_Name__r.Name}</td>
+                                <td style="font-weight: bold; color: blue; font-size: medium;">{item.Total_Sixes__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </div>
+    <!-- </lightning-card> -->
+</template>

@@ -1,0 +1,150 @@
+<template>
+    <div class="slds-var-p-around_medium" style="background-color: lightblue;
+    border: 3px solid black;">
+        <h1 style="text-align: center; color: black; font-size: large; font-weight: bold;
+        text-decoration: underline;"
+        >Get Every Match Result of a Team</h1>
+        <lightning-input
+            type="text"
+            onkeyup={handleChange}
+            placeholder="Enter Team Name"
+            style="color: black; font-weight: bold;"
+        >
+        </lightning-input>
+    </br>
+        <lightning-button label="Get Record"
+        variant ="Destructive" 
+        onclick={handleButton}
+        style="font-weight: bold;"
+        ></lightning-button>
+    </div>
+</br>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <h1 style="text-align: center; font-weight: bold; background-color: black;
+        color: white; font-size: large;">Performance Results</h1>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 1 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.First_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 2 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Second_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 3 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Third_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 4 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Fourth_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 5 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Fifth_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 6 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Sixth_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 7 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Seventh_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 8 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Eighth_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:true={getRecordsOfEachTeamResultForEveryGame}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue;">
+            <tbody>
+            <template for:each={getRecordsOfEachTeamResultForEveryGame} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; font-weight: bolder; font-size: large;">Game 9 Result</td>
+                        <td style="font-weight: bold; text-align: end; font-weight: bolder; font-size: large;
+                        color: blue;">{item.Ninth_Game_Result__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>

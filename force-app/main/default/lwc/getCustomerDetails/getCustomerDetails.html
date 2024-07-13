@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Customer Details">
+        <div class="slds-p-around_medium">
+            <template if:true={customerDetails.data}>
+                <template for:each={customerDetails.data} for:item="cust">
+                    <div class="slds-box slds-box_xx-small" key={cust.Id}>
+                        <p><strong>Customer Number :- </strong> {cust.Customer_Number__c}</p>
+                        <p><strong>Customer Name :- </strong> {cust.Name}</p>
+                        <p><strong>Customer Email :- </strong> {cust.Customer_Email__c}</p>
+                        <p><strong>Customer Type :- </strong> {cust.Customer_Type__c}</p>
+                        <p><strong>Customer Phone :- </strong> {cust.Phone_Number__c}</p>
+                        <p><strong>Customer Veg Bill :- </strong> {cust.Total_Veg_Bill__c}</p>
+                        <p><strong>Customer Non-Veg Bill :- </strong> {cust.Total_Non_Veg_Bill__c}</p>
+                        <p><strong>Customer Total Bill :- </strong> {cust.Total_Bill__c}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

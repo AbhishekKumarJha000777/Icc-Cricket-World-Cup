@@ -1,0 +1,83 @@
+<template>
+        <div class="slds-var-p-around_medium" style="background-color: lightblue;
+        border: 3px solid black;">
+            <h1 style="text-align: center; color: black; font-size: large; font-weight: bold;
+            text-decoration: underline;"
+            >Get Individual Records of a Player in the Tournament</h1>
+            <lightning-input
+                type="text"
+                onkeyup={handleChange}
+                placeholder="Enter Player Name"
+                style="color: black; font-weight: bold;"
+            >
+            </lightning-input>
+        </br>
+            <lightning-button label="Get Record"
+            variant ="Destructive" 
+            onclick={handleButton}
+            style="font-weight: bold; color: black;"
+            ></lightning-button>
+        </div>
+    </br>
+        <template if:true={getIndividualRecordsForEachPlayers}>
+            <h1 style="text-align: center; font-weight: bold; background-color: black;
+            color: white; font-size: large;">Batting Record</h1>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+            style="background-color: lightblue; border: 3px solid black;">
+                <thead>
+                    <tr>
+                        <th style="font-weight: bold; text-align: center;">Team Name</th>
+                        <th style="font-weight: bold; text-align: center;">Game Played</th>
+                        <th style="font-weight: bold; text-align: center;">Total Run Scored</th>
+                        <th style="font-weight: bold; text-align: center;">Total Ball Faced</th>
+                        <th style="font-weight: bold; text-align: center;">Strike Rate</th>
+                        <th style="font-weight: bold; text-align: center;">Fours</th>
+                        <th style="font-weight: bold; text-align: center;">Sixes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <template for:each={getIndividualRecordsForEachPlayers} for:item="item">   
+                        <tr key={item.Id}>
+                            <td style="font-weight: bold; text-align: center;">{item.Team_Name__r.Name}</td>
+                            <td style="font-weight: bold; text-align: center;">{item.Game_Played__c}</td>
+                            <td style="font-weight: bold; text-align: center;">{item.Total_Runs_Scored__c}</td>
+                            <td style="font-weight: bold; text-align: center;">{item.Total_Ball_Faced__c}</td>
+                            <td style="font-weight: bold; text-align: center;">{item.Strike_Rate__c}</td>
+                            <td style="font-weight: bold; text-align: center;">{item.Total_Fours__c}</td>
+                            <td style="font-weight: bold; text-align: center;">{item.Total_Sixes__c}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+    </br>
+    <template if:true={getIndividualRecordsForEachPlayers}>
+        <h1 style="text-align: center; font-weight: bold; background-color: black;
+        color: white; font-size: large;">Bowling Record</h1>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer"
+        style="background-color: lightblue; border: 3px solid black;">
+            <thead>
+                <tr>
+                    <th style="font-weight: bold; text-align: center;">Team Name</th>
+                    <th style="font-weight: bold; text-align: center;">Total Wickets Taken</th>
+                    <th style="font-weight: bold; text-align: center;">Total Run Given</th>
+                    <th style="font-weight: bold; text-align: center;">No Ball Bowled</th>
+                    <th style="font-weight: bold; text-align: center;">Wide Ball Bowled</th>
+                    <th style="font-weight: bold; text-align: center;">Maiden Bowled</th>
+                </tr>
+            </thead>
+            <tbody>
+            <template for:each={getIndividualRecordsForEachPlayers} for:item="item">   
+                    <tr key={item.Id}>
+                        <td style="font-weight: bold; text-align: center">{item.Team_Name__r.Name}</td>
+                        <td style="font-weight: bold; text-align: center">{item.Total_Wickets__c}</td>
+                        <td style="font-weight: bold; text-align: center">{item.Total_Run_Given__c}</td>
+                        <td style="font-weight: bold; text-align: center">{item.Total_No_Ball_Bowled__c}</td>
+                        <td style="font-weight: bold; text-align: center">{item.Total_Wide_Ball_Bowled__c}</td>
+                        <td style="font-weight: bold; text-align: center">{item.Total_Maiden_Bowled__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>
